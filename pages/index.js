@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Bienvenido David a esta super pagina hecha con <a href="https://nextjs.org">Next.js!</a>
+          ¡Buenos dias Xisco! Esta super pagina esta hecha con <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
     </div>
