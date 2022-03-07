@@ -9,9 +9,9 @@ export default function WeatherCard(props) {
       <Image
         className="mx-auto"
         src={`http://openweathermap.org/img/wn/${
-          (data.weather[0] || {}).icon
+          ((data.weather || [])[0] || {}).icon
         }@2x.png`}
-        alt={(data.weather[0] || {}).description}
+        alt={((data.weather || [])[0] || {}).description}
         height={100}
         width={100}
       ></Image>
