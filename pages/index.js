@@ -20,8 +20,6 @@ export default function Home() {
       .catch(console.error);
   }, []);
 
-  if (!data) return <p>No data</p>;
-
   return (
     <Layout>
       <div className="container mx-auto">
@@ -31,11 +29,15 @@ export default function Home() {
         <h1 className="font-bold text-xl my-4">
           Check the weather in your location
         </h1>
-        <div className="grid grid-cols-4 grid-flow-row gap-4">
-          {(data.list || []).map((item, index) => (
-            <WeatherCard key={index} data={item} />
-          ))}
-        </div>
+        {!data ? (
+          <p>We are fetching the data</p>
+        ) : (
+          <div className="grid grid-cols-4 grid-flow-row gap-4">
+            {(data.list || []).map((item, index) => (
+              <WeatherCard key={index} data={item} />
+            ))}
+          </div>
+        )}
       </div>
     </Layout>
   );
